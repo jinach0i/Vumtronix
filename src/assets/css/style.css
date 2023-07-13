@@ -1,0 +1,69 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+*{margin: 0; padding: 0; box-sizing: border-box;}
+body{font-family: 'Play', sans-serif; width: 100%; height: 100%;}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: blue;
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: blue;
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
+/* BUTTONS: */
+.btn1{display: block; width: 250px; height: 60px; line-height: 60px; text-align: left; border: 2px solid #222; background-color: #222; color: white;}
+.btn1 strong{display: inline-block; width: 80%; font-size: 16px; font-weight: bold; letter-spacing: -.5px; text-indent: 25px;}
+.btn1 svg{width: 10%; display: inline-block; font-size: 24px; margin-right: 15px;}
+
+/* LI: */
+ul li{position: relative; height: 50px; line-height: 50px;
+  border-bottom: 1px solid #e5e5e5;}
+ul li::before{content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background-color: #ed1c24; transition: all .6s;}
+ul li:hover::before{width: 100%;}
+ul li a{display: flex; justify-content: space-between; align-items: center; font-size: 16px;}
+ul li:hover a svg{}
+ul li a svg{display: inline-block; color: #818181;}
+ul li a svg::before{content: ''; position: absolute; }
+/* .title류: */
+.titleB{font-size: 38px;
+  color: #222;
+  letter-spacing: -.35px;
+  font-weight: bold;
+  margin-bottom: 30px;}
